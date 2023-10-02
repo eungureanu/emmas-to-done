@@ -1,0 +1,206 @@
+:root {
+    --prio-one: rgba(245, 164, 164, 0.3);
+    --prio-two: rgba(248, 209, 108, 0.3);
+    --prio-three: rgba(240, 240, 240, 1);
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+li{
+    list-style: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.page-body {
+    display: flex;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar {
+    flex-shrink: 0;
+    background-color: #f5f5f5;
+    width: 150px;
+    padding: 20px;
+}
+
+.add-new-todo {
+    margin: 30px 20px;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background-color: #f175e0;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(241, 117, 224, 0.2);
+    border-color: #ab339b;
+}
+
+.modal {
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    z-index: 10;
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    visibility: hidden;
+}
+
+.modal.active {
+    visibility: visible;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgb(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.todo-props {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > * {
+    margin: 15px;
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+*:focus{
+    outline: none;
+}
+
+input[type="date"], select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; 
+}
+
+.form-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-buttons > button {
+    cursor: pointer;
+    border-radius: 10px;
+    border-color: grey;
+    padding: 10px;
+    width: 45%;
+
+}
+
+#submit-todo, #save-todo {
+    background-color: rgb(241, 117, 224);
+    color: white;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin: 20px;
+}
+
+.item-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--prio-three);
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 40px);
+}
+
+.todo-title {
+    cursor: text;
+    font-weight: bold;
+    margin: 10px 10px;
+}
+
+.todo-details {
+    cursor: text;
+    margin: 10px 20px;
+}
+
+div[contenteditable="true"]:focus{
+    border: 2px solid #e5e5e5; /* Light grey border */
+    background-color: #fff; /* White background color */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.7); /* Pink shadow with transparency */
+    outline: none; /* Remove the default focus outline */
+  
+    /* Text color */
+    color: #333; /* Dark grey text color */
+  
+    /* Caret color (cursor color) */
+    caret-color: #ff69b4; /* Pink caret color */
+}
+
+.todo-due, .todo-prio {
+    margin: 10px 20px;
+}
+
+.todo-edit, .todo-delete {
+    cursor: pointer;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 10px 5px;
+}
+
+.todo-edit:hover, .todo-delete:hover {
+    background-color: #d0d0d0;
+}
+
+.todo-done *:not(button){
+    text-decoration: line-through;
+    color: grey;
+}
+
+/* .sidebar .new-category {
+    display: none;
+} */
