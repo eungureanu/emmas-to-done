@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To DoNE!</title>
+</head>
+<body>
+    <script defer src="main.js"></script>
+    <div class="header">
+        <h1>ToDo...ne!</h1>
+    </div>
+    <div class="page-body">
+        <div class="sidebar">
+            <ul id="category-list">
+                <li>Category 1</li>
+                <li>Category 2</li>
+                <li>Category 3</li>
+            </ul>
+            <input type="text" placeholder="Type a new category" id="new-category">
+            <button class="add-category" id="add-category">+ Add</button>
+        </div>
+        <div class="todo-list" id="todo-list">
+            <!-- <div class="item-card" data-itemid="tralala1">
+                <input type="checkbox">
+                <div class="todo-title" contenteditable="true">Do this todo</div>
+                <div class="todo-details">This todo refers to that thing.</div>
+                <div class="todo-due">Due Date: 2023-08-15</div>
+                <div class="todo-prio">Priority: High</div>
+                <button class="todo-edit">Edit</button>
+                <button class="todo-delete">Delete</button>
+            </div>
+            <div class="item-card todo-done" id="tralala2">
+                <input type="checkbox">
+                <div class="todo-title">Do this todo</div>
+                <div class="todo-details">This todo refers to that thing.</div>
+                <div class="todo-due">Due Date: 2023-08-15</div>
+                <div class="todo-prio">Priority: High</div>
+                <button class="todo-edit">Edit</button>
+                <button class="todo-delete">Delete</button>
+            </div> -->
+        </div>
+        <button class="add-new-todo" id="add-new-todo">+</button>
+    </div>
+                    
+    <div class="modal" id="modal">
+        <form id="todo-form">
+            <input type="text" id="title" name="title" placeholder="New todo...">
+            <textarea type="text" id="description" name="description" placeholder="Details..." rows="4"></textarea>
+            <div class="todo-props">
+                <label for="due-date">Due Date:</label>
+                <input type="date" id="due-date" name="duedate">
+                <label for="prio">Priority</label>
+                <select name="priorities" id="prio">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <label for="category">Category</label>
+                <select name="categories" id="category">
+                    <option>To Do</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="button" id="submit-todo">Add</button>
+                <button type="button" id="cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <div class="" id="overlay"></div>
+</body>
+</html>
